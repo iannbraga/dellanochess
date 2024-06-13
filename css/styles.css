@@ -1,0 +1,183 @@
+/* Estilo personalizado para a timeline
+
+/* Paleta de cores */
+.bg-1 {
+    background-color: #050505;
+}
+
+.color-1 {
+    color: #050505;
+}
+
+.bg-2 {
+    background-color: #231f38;
+}
+
+.color-2 {
+    color: #231f38;
+}
+
+.bg-3 {
+    background-color: #432657;
+}
+
+.color-3 {
+    color: #432657;
+}
+
+.bg-4 {
+    background-color: #572078;
+}
+
+.color-4 {
+    color: #572078;
+}
+
+.bg-5 {
+    background-color: #5c4786;
+}
+
+.color-5 {
+    color: #5c4786;
+}
+
+.bg-6{
+    background-color: #6268aa;
+}
+
+.color-6 {
+    color: #6268aa;
+}
+
+.bg-7 {
+    background-color: #87aada;
+}
+
+.color-7 {
+    color: #87aada;
+}
+
+.bg-8 {
+    background-color: #ba75aa;
+}
+
+.color-8 {
+    color: #ba75aa;
+}
+
+.bg-9 {
+    background-color: #d59ec3;
+}
+
+.color-9 {
+    color: #d59ec3;
+}
+
+.bg-10 {
+    background-color: #c28989;
+}
+
+.color-10 {
+    color: #c28989;
+}
+
+.bg-12 {
+    background-color: #D1BEB1;
+}
+
+.color-12 {
+    color: #D1BEB1;
+}
+
+.bg-13 {
+    background-color: #cbbdb1;
+}
+
+.color-13 {
+    color: #cbbdb1;
+} 
+/* end */
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    list-style: none;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: gainsboro;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 0 0 20px;
+}
+
+.timeline-item::before,
+.timeline-item::after {
+    content: " ";
+    display: table;
+}
+
+.timeline-item::after {
+    clear: both;
+}
+
+.timeline-panel {
+    position: relative;
+    width: 46%;
+    float: left;
+    padding: 0 20px 20px 30px;
+    text-align: right;
+    border: 1px solid #d4d4d4;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.timeline-panel::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -10px;
+    display: inline-block;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #d4d4d4;
+    border-right: 0 solid #d4d4d4;
+    border-bottom: 10px solid transparent;
+}
+
+.timeline-badge {
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    line-height: 50px;
+    font-size: 1.4em;
+    text-align: center;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    margin-left: -13px;
+    border: 1px solid #d4d4d4;
+    border-radius: 50%;
+}
+
+.timeline-item-inverted .timeline-panel {
+    float: right;
+    text-align: left;
+    padding: 0 30px 20px 20px;
+}
+
+.timeline-item-inverted .timeline-panel::before {
+    right: auto;
+    left: -10px;
+    border-left-width: 0;
+    border-right-width: 10px;
+}
+
