@@ -25,19 +25,19 @@
   <!-- Navbar -->
   <nav class="navbar bg-white fixed-top">
     <div class="container-fluid d-flex justi">
-      <a class="navbar-brand font-monospace ps-4" href="#">DELLANOCHE</a>
+      <a class="navbar-brand font-monospace ps-4" href="#">dellanoche</a>
       <ul class="nav navbar mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-dark-emphasis" aria-current="page" href="#">Home</a>
+          <a class="nav-link text-dark-emphasis" aria-current="page" href="#">home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark-emphasis" href="#">Bio</a>
+          <a class="nav-link text-dark-emphasis" href="#bio">bio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark-emphasis" href="#">Agenda</a>
+          <a class="nav-link text-dark-emphasis" href="#">agenda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark-emphasis" href="#eventos"> Eventos </a>
+          <a class="nav-link text-dark-emphasis" href="#eventos"> eventos </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link"></a>
@@ -59,14 +59,24 @@
   <!-- Navbar -->
 
   <div style="height: 200px;"></div>
+
   <!-- Bio -->
-  <div class="container-fluid p-5">
-    <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-7">
+  <div class="container-fluid p-3" id="bio">
+    <div class="row p-0">
+      <!-- Texto -->
+      <div class="col-12 d-flex justify-content-center">
+        <h1 class="text-center font-monospace p-3 fs-2 bg-body-tertiary mb-4 rounded-5 w-50">
+          bio
+        </h1>
+      </div>
+      <!-- Texto -->
+
+      <!-- Foto -->
+      <div class="col-sm-12 col-md-12 col-lg-7 p-0 ps-lg-5 d-flex justify-content-center align-items-center">
         <div class="container-fluid bg-white rounded-4">
-          <h6 class="fs-1 font-monospace text-center pt-5 mt-5">Sobre</h6>
-          <p class="font-monospace p-5">
-            Dellanoche se apresenta desde 2017 munida de uma proposta open
+          <h6 class="fs-1 font-monospace text-center pt-5 mt-5">sobre</h6>
+          <p class="font-monospace p-2 pb-5">
+            dellanoche se apresenta desde 2017 munida de uma proposta open
             format divertida. conhecida por sua versatilidade, qualidade musical
             e looks, já tocou em diversas casas de show em palmas, em festivais
             como sonora e festival bem ali, e levou seus sets pra sua terra
@@ -80,14 +90,50 @@
           </p>
         </div>
       </div>
+      <!-- Foto -->
 
-      <div class="col-sm-12 col-md-12 col-lg-5 d-flex justify-content-center">
-        <img src="img/bio1.png" alt="" class="img-fluid" />
+      <!-- Carousel -->
+      <div class="col-sm-12 col-md-12 col-lg-5">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="4000">
+              <div class="d-flex justify-content-center">
+                <img src="img/della/della.jpg" alt="" class="img-fluid rounded-5"
+                  style="object-fit: cover; max-height: 600px;" />
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+              <div class="d-flex justify-content-center">
+
+                <img src="img/della/della(1).jpg" alt="" class="img-fluid rounded-5"
+                  style="object-fit: cover; max-height: 600px;" />
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+              <div class="d-flex justify-content-center">
+                <img src="img/della/della(3).jpg" alt="" class="img-fluid rounded-5"
+                  style="object-fit: cover; max-height: 600px;" />
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
+      <!-- Carousel -->
 
       <!-- Parceiros -->
-
-      <div class="col-sm-12 col-md-12 col-lg-12 mt-5 font-monospace">
+      <!-- <div class="col-sm-12 col-md-12 col-lg-12 mt-5 font-monospace">
         <div class="row d-flex justify-content-evenly">
           <div class="col-sm-12 col-md-6 col-lg-3">
             <ul class="list-unstyled bg-white rounded-5 p-4">
@@ -145,7 +191,37 @@
             </ul>
           </div>
         </div>
+      </div> -->
+
+      <!-- Galeria -->
+      <!-- <div class="col-12">
+        <div class="container-fluid mt-5">
+          <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center align-items-center mt-5">
+              <img src="/img/eventos/flyer/baile_della_raevenna.jpeg" alt="" class="img-fluid rounded-5">
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center align-items-center mt-5">
+              <img src="/img/eventos/flyer/bird_bass.jpeg" alt="" class="img-fluid rounded-5">
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center align-items-center mt-5">
+              <img src="/img/eventos/flyer/della_no_chile.jpeg" alt="" class="img-fluid rounded-5">
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- Galeria -->
+
+      <!-- Galeria 2 -->
+      <div class="col-12">
+        <div class="container-fluid">
+          <div class="grid" id="galeriaBioGrid">
+          </div>
+        </div>
       </div>
+      <!-- Galeria 2 -->
+
     </div>
   </div>
   <!-- Bio -->
@@ -403,6 +479,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
     crossorigin="anonymous"></script>
+
+  <!-- Mansory.js -->
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+  <!-- Meu Js -->
+  <script src="js/script.js"></script>
 </body>
 
 </html>
