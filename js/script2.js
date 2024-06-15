@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
           // Inicializar Masonry após todas as imagens terem sido carregadas
           var msnry = new Masonry(imageGrid, {
             itemSelector: '.grid-item',
-            columnWidth: 5
+            columnWidth: '.grid-item', // Define a largura da coluna baseada no primeiro item
+            gutter: 10 // Define a margem entre os itens
           });
         }
       };
@@ -43,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
           // Inicializar Masonry mesmo se algumas imagens falharem ao carregar
           var msnry = new Masonry(imageGrid, {
             itemSelector: '.grid-item',
-            float: center,
-            columnWidth: 5
+            columnWidth: '.grid-item',
+            gutter: 10
           });
         }
       };

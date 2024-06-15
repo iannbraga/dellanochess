@@ -1,4 +1,37 @@
-/* Estilo personalizado para a timeline
+@media (max-width: 575.98px) {
+    .hidden-sm {
+        display: none !important;
+    }
+}
+
+/* Hide on medium devices */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .hidden-md {
+        display: none !important;
+    }
+}
+
+/* Hide on large devices */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hidden-lg {
+        display: none !important;
+    }
+}
+
+/* Hide on extra large devices */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .hidden-xl {
+        display: none !important;
+    }
+}
+
+/* Hide on extra extra large devices */
+@media (min-width: 1200px) {
+    .hidden-xxl {
+        display: none !important;
+    }
+}
+
 
 /* Paleta de cores */
 .bg-1 {
@@ -41,7 +74,7 @@
     color: #5c4786;
 }
 
-.bg-6{
+.bg-6 {
     background-color: #6268aa;
 }
 
@@ -95,9 +128,10 @@
 
 .color-13 {
     color: #cbbdb1;
-} 
-/* end */
+}
 
+
+/* Timeline */
 .timeline {
     position: relative;
     padding: 20px 0;
@@ -180,4 +214,3 @@
     border-left-width: 0;
     border-right-width: 10px;
 }
-
