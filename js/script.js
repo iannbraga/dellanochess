@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const imgElement = document.createElement('img');
       imgElement.classList.add('img-fluid', 'rounded-2');
-      imgElement.style.height = '500px';
+      imgElement.style.height = '38rem';
       imgElement.style.objectFit = 'cover';
       imgElement.src = image.src;
       imgElement.alt = image.nome || ''; // Adiciona um alt vazio se não houver nome

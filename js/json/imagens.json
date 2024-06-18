@@ -1,50 +1,17 @@
 [
-    {
-        "src": "img/della/della(3).jpg"
-    },
-    {
-        "src": "img/della/della.jpg"
-    },
-    {
-        "src": "img/della/della(5).jpg"
-    },
-    {
-        "src": "img/della/della(7).jpg"
-    },
-    {
-        "src": "img/della/della(8).jpg"
-    },
-    {
-        "src": "img/della/della(9).jpg"
-    },
-    {
-        "src": "img/della/della(10).jpg"
-    },
-    {
-        "src": "img/della/della(12).jpg"
-    },
-    {
-        "src": "img/della/della(13).jpg"
-    },
-    {
-        "src": "img/della/della(14).jpg"
-    },
-    {
-        "src": "img/della/della(15).jpeg"
-    },
-    {
-        "src": "img/della/della(16).jpeg"
-    },
-    {
-        "src": "img/della/della(18).jpeg"
-    },
-    {
-        "src": "img/della/della(20).jpg"
-    },
-    {
-        "src": "img/della/della(21).jpeg"
-    },
-    {
-        "src": "img/della/della(22).jpg"
-    }
+    { "src": "img/della/della(3).jpg" },
+    { "src": "img/della/della(22).jpg" },
+    { "src": "img/della/della.jpg" },
+    { "src": "img/della/della(5).jpg" },
+    { "src": "img/della/della(7).jpg" },
+    { "src": "img/della/della(21).jpeg" },
+    { "src": "img/della/della(8).jpg" },
+    { "src": "img/della/della(9).jpg" },
+    { "src": "img/della/della(10).jpg" },
+    { "src": "img/della/della(12).jpg" },
+    { "src": "img/della/della(13).jpg" },
+    { "src": "img/della/della(14).jpg" },
+    { "src": "img/della/della(15).jpeg" },
+    { "src": "img/della/della(16).jpeg" },
+    { "src": "img/della/della(20).jpg" }
 ]
