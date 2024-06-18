@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const imgElement = document.createElement('img');
       imgElement.classList.add('img-fluid', 'rounded-2');
-      imgElement.style.height = '400px';
+      imgElement.style.height = '500px';
       imgElement.style.objectFit = 'cover';
       imgElement.src = image.src;
       imgElement.alt = image.nome || ''; // Adiciona um alt vazio se não houver nome
@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
           // Inicializar Masonry mesmo se algumas imagens falharem ao carregar
           var msnry = new Masonry(imageGrid, {
             itemSelector: '.grid-item',
-            float: center,
             columnWidth: 5
           });
         }

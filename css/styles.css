@@ -32,7 +32,6 @@
     }
 }
 
-
 /* Paleta de cores */
 .bg-1 {
     background-color: #050505;
@@ -131,86 +130,3 @@
 }
 
 
-/* Timeline */
-.timeline {
-    position: relative;
-    padding: 20px 0;
-    list-style: none;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: gainsboro;
-    left: 50%;
-    margin-left: -2px;
-}
-
-.timeline-item {
-    position: relative;
-    margin: 0 0 20px;
-}
-
-.timeline-item::before,
-.timeline-item::after {
-    content: " ";
-    display: table;
-}
-
-.timeline-item::after {
-    clear: both;
-}
-
-.timeline-panel {
-    position: relative;
-    width: 46%;
-    float: left;
-    padding: 0 20px 20px 30px;
-    text-align: right;
-    border: 1px solid #d4d4d4;
-    background: #fff;
-    border-radius: 5px;
-}
-
-.timeline-panel::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    right: -10px;
-    display: inline-block;
-    border-top: 10px solid transparent;
-    border-left: 10px solid #d4d4d4;
-    border-right: 0 solid #d4d4d4;
-    border-bottom: 10px solid transparent;
-}
-
-.timeline-badge {
-    color: #fff;
-    width: 25px;
-    height: 25px;
-    line-height: 50px;
-    font-size: 1.4em;
-    text-align: center;
-    position: absolute;
-    top: 16px;
-    left: 50%;
-    margin-left: -13px;
-    border: 1px solid #d4d4d4;
-    border-radius: 50%;
-}
-
-.timeline-item-inverted .timeline-panel {
-    float: right;
-    text-align: left;
-    padding: 0 30px 20px 20px;
-}
-
-.timeline-item-inverted .timeline-panel::before {
-    right: auto;
-    left: -10px;
-    border-left-width: 0;
-    border-right-width: 10px;
-}
