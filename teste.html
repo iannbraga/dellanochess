@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJ DELLANOCHE ★ official website</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Special+Elite&family=VT323&display=swap');
+
+  :root {
+    --pink: #ff2d78;
+    --hotpink: #ff0066;
+    --magenta: #cc0055;
+    --purple: #9900cc;
+    --dark: #0a0010;
+    --darker: #050008;
+    --gold: #ffcc00;
+    --silver: #c0c0dd;
+    --glow-pink: 0 0 8px #ff2d78, 0 0 20px #ff006650, 0 0 40px #ff006620;
+    --glow-gold: 0 0 8px #ffcc00, 0 0 20px #ffcc0050;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* === CUSTOM NAIL CURSOR === */
+  body {
+    cursor: none;
+    background-color: var(--darker);
+    background-image:
+      radial-gradient(ellipse at 20% 20%, #1a003a 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, #2a0030 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff006610' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    font-family: 'Special Elite', cursive;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  #nail-cursor {
+    position: fixed;
+    width: 32px;
+    height: 56px;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-4px, -2px);
+    transition: transform 0.05s;
+  }
+
+  /* === STARS BACKGROUND === */
+  #stars-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* === LAYOUT === */
+  .page-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  /* === HEADER === */
+  header {
+    text-align: center;
+    padding: 30px 10px 10px;
+    position: relative;
+  }
+
+  .site-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    font-weight: 900;
+    color: transparent;
+    background: linear-gradient(135deg, #fff 0%, #ffaad4 25%, #ff2d78 50%, #cc00ff 75%, #fff 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: none;
+    letter-spacing: 0.08em;
+    animation: shimmer 3s ease-in-out infinite;
+    line-height: 1;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+  }
+
+  .site-title::after {
+    content: 'DJ DELLANOCHE';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #fff 0%, #ffaad4 25%, #ff2d78 50%, #cc00ff 75%, #fff 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: blur(8px);
+    opacity: 0.5;
+    animation: shimmer 3s ease-in-out infinite reverse;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .subtitle {
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    color: #ff99cc;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    animation: blink-subtle 2s ease-in-out infinite;
+  }
+
+  @keyframes blink-subtle {
+    0%, 90%, 100% { opacity: 1; }
+    95% { opacity: 0.3; }
+  }
+
+  .divider {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff2d78, #cc00ff, #ff2d78, transparent);
+    margin: 12px 0;
+    box-shadow: var(--glow-pink);
+  }
+
+  /* === NAV === */
+  nav {
+    text-align: center;
+    padding: 6px 0;
+  }
+
+  nav a {
+    font-family: 'VT323', monospace;
+    font-size: 1.3rem;
+    color: #ffccee;
+    text-decoration: none;
+    margin: 0 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.2s, text-shadow 0.2s;
+    display: inline-block;
+  }
+
+  nav a:hover {
+    color: #ff2d78;
+    text-shadow: var(--glow-pink);
+    transform: translateY(-1px);
+  }
+
+  /* === MAIN GRID === */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  /* === PANELS === */
+  .panel {
+    background: linear-gradient(135deg, rgba(20,0,40,0.95) 0%, rgba(40,0,60,0.95) 100%);
+    border: 1px solid #cc0066;
+    box-shadow: inset 0 0 20px rgba(255,0,102,0.05), 0 0 15px rgba(255,0,102,0.2);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .panel-title {
+    background: linear-gradient(90deg, #660033, #9900aa, #660033);
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    color: #ffccdd;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #cc0066;
+  }
+
+  .panel-title::before, .panel-title::after {
+    content: '★';
+    font-size: 0.8rem;
+    color: var(--gold);
+  }
+
+  .panel-body {
+    padding: 14px;
+  }
+
+  /* === HERO / ABOUT === */
+  .hero-section {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .dj-avatar {
+    width: 120px;
+    min-width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ff2d78;
+    box-shadow: var(--glow-pink);
+    background: radial-gradient(circle at 35% 35%, #cc0066, #330033);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    position: relative;
+    overflow: hidden;
+    animation: pulse-avatar 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-avatar {
+    0%, 100% { box-shadow: 0 0 8px #ff2d78, 0 0 20px #ff006650; }
+    50% { box-shadow: 0 0 16px #ff2d78, 0 0 40px #ff0066, 0 0 60px #cc00ff40; }
+  }
+
+  .about-text {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #ddc0ee;
+  }
+
+  .about-text p { margin-bottom: 8px; }
+
+  .about-text strong {
+    color: #ff99cc;
+    font-style: italic;
+  }
+
+  /* === TRACKLIST === */
+  .track-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,0,102,0.2);
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 3px;
+  }
+
+  .track-item:hover {
+    background: rgba(255,0,102,0.08);
+    padding-left: 6px;
+  }
+
+  .track-item:hover .track-name {
+    color: #ff2d78;
+    text-shadow: 0 0 8px #ff2d78;
+  }
+
+  .track-num {
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    color: #660044;
+    min-width: 22px;
+  }
+
+  .track-info { flex: 1; }
+
+  .track-name {
+    font-size: 0.9rem;
+    color: #ffddee;
+    transition: color 0.2s;
+  }
+
+  .track-genre {
+    font-size: 0.7rem;
+    color: #996688;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .track-duration {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    color: #996688;
+  }
+
+  /* === GUESTBOOK === */
+  .guestbook-entry {
+    border-bottom: 1px dashed #440033;
+    padding: 8px 0;
+    font-size: 0.82rem;
+  }
+
+  .gb-name {
+    color: #ff99cc;
+    font-weight: bold;
+  }
+
+  .gb-date {
+    color: #660044;
+    font-size: 0.72rem;
+    margin-left: 6px;
+    font-family: 'VT323', monospace;
+  }
+
+  .gb-msg { color: #ccaacc; margin-top: 2px; }
+
+  .gb-form {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .gb-form input, .gb-form textarea {
+    background: rgba(30,0,50,0.8);
+    border: 1px solid #660044;
+    color: #ffccee;
+    padding: 6px 8px;
+    font-family: 'Special Elite', cursive;
+    font-size: 0.8rem;
+    outline: none;
+    resize: none;
+    transition: border-color 0.2s;
+  }
+
+  .gb-form input:focus, .gb-form textarea:focus {
+    border-color: #ff2d78;
+    box-shadow: 0 0 6px rgba(255,45,120,0.3);
+  }
+
+  .gb-form textarea { height: 55px; }
+
+  .btn-y2k {
+    background: linear-gradient(180deg, #ff66aa 0%, #cc0055 50%, #990044 100%);
+    border: 2px outset #ff99cc;
+    color: #fff;
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    padding: 4px 16px;
+    cursor: none;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    transition: all 0.1s;
+    align-self: flex-start;
+  }
+
+  .btn-y2k:hover {
+    background: linear-gradient(180deg, #ff88cc 0%, #ff0066 50%, #cc0055 100%);
+    box-shadow: 0 0 10px #ff2d78;
+  }
+
+  .btn-y2k:active {
+    border-style: inset;
+  }
+
+  /* === MUSIC PLAYER === */
+  #music-player {
+    background: linear-gradient(135deg, #0a0020, #1a0030);
+    border: 2px solid #cc0066;
+    box-shadow: 0 0 20px rgba(204,0,102,0.4), inset 0 0 10px rgba(0,0,0,0.5);
+    padding: 14px;
+    margin-top: 10px;
+  }
+
+  .player-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .player-disc {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: conic-gradient(#ff2d78 0deg, #cc00ff 120deg, #330033 240deg, #ff2d78 360deg);
+    border: 3px solid #660044;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 4s linear infinite paused;
+    position: relative;
+    box-shadow: 0 0 15px rgba(255,0,102,0.5);
+  }
+
+  .player-disc.playing {
+    animation-play-state: running;
+  }
+
+  .player-disc::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background: var(--darker);
+    border-radius: 50%;
+    border: 2px solid #440033;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .player-info { flex: 1; }
+
+  .player-track-name {
+    font-family: 'VT323', monospace;
+    font-size: 1.15rem;
+    color: #ff99cc;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+  }
+
+  .player-scrolling {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .player-scrolling-inner {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 8s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .player-artist {
+    font-size: 0.72rem;
+    color: #996688;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .player-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .ctrl-btn {
+    background: linear-gradient(180deg, #330044 0%, #1a0033 100%);
+    border: 1px outset #660066;
+    color: #ff99cc;
+    width: 30px;
+    height: 26px;
+    cursor: none;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s;
+  }
+
+  .ctrl-btn:hover {
+    background: linear-gradient(180deg, #550066 0%, #330055 100%);
+    box-shadow: 0 0 8px rgba(255,0,102,0.5);
+  }
+
+  .ctrl-btn:active { border-style: inset; }
+
+  .ctrl-btn.main-play {
+    width: 40px;
+    height: 32px;
+    background: linear-gradient(180deg, #ff4499 0%, #cc0055 100%);
+    color: white;
+    font-size: 1rem;
+    border-color: #ff99cc;
+    box-shadow: 0 0 10px rgba(255,0,102,0.4);
+  }
+
+  .ctrl-btn.main-play:hover {
+    box-shadow: 0 0 16px rgba(255,0,102,0.8);
+  }
+
+  .volume-wrap {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: #996688;
+  }
+
+  .volume-wrap input[type=range] {
+    width: 60px;
+    accent-color: #ff2d78;
+    cursor: none;
+  }
+
+  .mute-toggle {
+    font-family: 'VT323', monospace;
+    font-size: 0.85rem;
+    color: #ff99cc;
+    background: transparent;
+    border: 1px solid #660044;
+    padding: 2px 6px;
+    cursor: none;
+    transition: all 0.2s;
+  }
+
+  .mute-toggle:hover {
+    border-color: #ff2d78;
+    color: #fff;
+    box-shadow: 0 0 6px #ff2d78;
+  }
+
+  /* === SIDEBAR === */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* === STATUS === */
+  .status-box {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .status-pic {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 8px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #330022, #660044, #220033);
+    border: 2px solid #ff2d78;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: var(--glow-pink);
+  }
+
+  .status-text {
+    font-size: 0.75rem;
+    color: #cc88aa;
+    line-height: 1.5;
+  }
+
+  .status-online {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #00ff88;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #00ff88;
+    margin-right: 4px;
+    animation: blink-subtle 1.5s ease-in-out infinite;
+  }
+
+  /* === MOOD BAR === */
+  .mood-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    font-size: 0.78rem;
+    color: #cc88aa;
+  }
+
+  .mood-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(255,0,102,0.1);
+    border: 1px solid #440033;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mood-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #cc0055, #ff2d78, #ff99cc);
+    box-shadow: 0 0 6px #ff2d78;
+    animation: none;
+  }
+
+  /* === BUTTONS 88x31 === */
+  .buttons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .badge-88 {
+    display: inline-block;
+    width: 88px;
+    height: 31px;
+    font-family: 'VT323', monospace;
+    font-size: 0.7rem;
+    text-align: center;
+    line-height: 31px;
+    letter-spacing: 0.05em;
+    border: 1px solid;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .badge-88:nth-child(1) { background: #660033; border-color: #ff2d78; color: #ffccdd; }
+  .badge-88:nth-child(2) { background: #003366; border-color: #0099ff; color: #ccddff; }
+  .badge-88:nth-child(3) { background: #004400; border-color: #00cc44; color: #ccffdd; }
+  .badge-88:nth-child(4) { background: #440066; border-color: #cc00ff; color: #eeccff; }
+  .badge-88:nth-child(5) { background: #663300; border-color: #ff6600; color: #ffeedd; }
+  .badge-88:nth-child(6) { background: #330044; border-color: #ff00cc; color: #ffccff; }
+
+  /* === GLITTER EFFECT === */
+  .glitter-text {
+    display: inline-block;
+    background: linear-gradient(45deg, #fff 0%, #ffccee 25%, #ff2d78 50%, #cc00ff 75%, #fff 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: glitter 2s ease-in-out infinite;
+  }
+
+  @keyframes glitter {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+  }
+
+  /* === FOOTER === */
+  footer {
+    text-align: center;
+    padding: 20px 10px;
+    font-family: 'VT323', monospace;
+    font-size: 0.9rem;
+    color: #550033;
+    letter-spacing: 0.1em;
+  }
+
+  footer a { color: #880055; text-decoration: none; }
+  footer a:hover { color: #ff2d78; }
+
+  /* === SPARKLE PARTICLES === */
+  .sparkle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    font-size: 16px;
+    animation: sparkle-fall 1.2s ease-out forwards;
+  }
+
+  @keyframes sparkle-fall {
+    0% { opacity: 1; transform: translate(0,0) scale(1) rotate(0deg); }
+    100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0.3) rotate(180deg); }
+  }
+
+  /* === SCROLLBAR === */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #0a0010; }
+  ::-webkit-scrollbar-thumb { background: linear-gradient(#cc0055, #9900cc); border-radius: 4px; }
+
+  /* === MARQUEE TOP === */
+  .top-marquee {
+    background: linear-gradient(90deg, #330011, #550033, #330011);
+    border-top: 1px solid #880044;
+    border-bottom: 1px solid #880044;
+    padding: 4px 0;
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    color: #ff99cc;
+    letter-spacing: 0.15em;
+    overflow: hidden;
+  }
+
+  .top-marquee-inner {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+  }
+
+  .sep { margin: 0 16px; color: #ff2d78; }
+
+  /* === FLOATING STARS DECORATION === */
+  .deco-star {
+    position: absolute;
+    pointer-events: none;
+    animation: twinkle 2s ease-in-out infinite;
+    color: #ffcc00;
+    font-size: 12px;
+    text-shadow: var(--glow-gold);
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(0.7); }
+  }
+
+  @media (max-width: 700px) {
+    .main-grid { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+    .hero-section { flex-direction: column; }
+  }
+
+  /* === LOADING SCREEN === */
+  #loading {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 99990;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+    transition: opacity 0.8s;
+  }
+
+  #loading h1 {
+    font-size: 3rem;
+    color: transparent;
+    background: linear-gradient(90deg, #ff2d78, #cc00ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 20px;
+    animation: shimmer 2s ease-in-out infinite;
+    background-size: 200% 200%;
+  }
+
+  .load-bar-wrap {
+    width: 240px;
+    height: 12px;
+    border: 2px solid #660044;
+    background: #100010;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .load-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #cc0055, #ff2d78, #cc00ff);
+    box-shadow: 0 0 10px #ff2d78;
+    width: 0%;
+    transition: width 0.1s;
+  }
+
+  .load-text {
+    font-family: 'VT323', monospace;
+    color: #996688;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loading">
+  <h1>DELLANOCHE</h1>
+  <div class="load-bar-wrap"><div class="load-bar-fill" id="load-fill"></div></div>
+  <div class="load-text" id="load-text">LOADING...</div>
+</div>
+
+<!-- Custom Nail Cursor -->
+<svg id="nail-cursor" viewBox="0 0 32 56" xmlns="http://www.w3.org/2000/svg">
+  <!-- Finger -->
+  <rect x="10" y="28" width="12" height="24" rx="6" fill="#f4c0a0"/>
+  <rect x="11" y="30" width="10" height="22" rx="5" fill="#e8b090"/>
+  <!-- Nail base -->
+  <ellipse cx="16" cy="30" rx="7" ry="4" fill="#f4c0a0"/>
+  <!-- Long stiletto nail -->
+  <path d="M9 28 Q10 10 16 2 Q22 10 23 28 Q20 26 16 25 Q12 26 9 28Z" fill="url(#nailGrad)"/>
+  <!-- Nail shine -->
+  <path d="M12 26 Q13 14 16 8 Q17 14 18 24" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="13" cy="14" rx="2" ry="3" fill="rgba(255,255,255,0.35)" transform="rotate(-8,13,14)"/>
+  <!-- Nail tip highlight -->
+  <path d="M11 6 Q16 1 21 6" stroke="rgba(255,255,255,0.4)" stroke-width="1" fill="none"/>
+  <defs>
+    <linearGradient id="nailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff44aa"/>
+      <stop offset="40%" style="stop-color:#ff0066"/>
+      <stop offset="70%" style="stop-color:#cc00aa"/>
+      <stop offset="100%" style="stop-color:#880055"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- Stars Background -->
+<canvas id="stars-canvas"></canvas>
+
+<div class="page-wrapper">
+  <!-- Top Marquee -->
+  <div class="top-marquee">
+    <span class="top-marquee-inner">
+      ★ welcome to dj dellanoche's official website ★
+      <span class="sep">✦</span> born to play <span class="sep">✦</span>
+      request a set <span class="sep">✦</span> guestbook is open <span class="sep">✦</span>
+      new mix dropping soon <span class="sep">✦</span>
+      follow on myspace <span class="sep">✦</span>
+      ★ best viewed in 1024x768 ★
+      <span class="sep">✦</span> welcome to dj dellanoche's official website ★
+      <span class="sep">✦</span> born to play <span class="sep">✦</span>
+      request a set <span class="sep">✦</span> guestbook is open <span class="sep">✦</span>
+      new mix dropping soon <span class="sep">✦</span>
+    </span>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="deco-star" style="top:10px;left:5%;animation-delay:0s">★</div>
+    <div class="deco-star" style="top:20px;right:8%;animation-delay:0.5s">✦</div>
+    <div class="deco-star" style="top:40px;left:12%;animation-delay:1s;font-size:8px">★</div>
+    <div class="deco-star" style="top:50px;right:20%;animation-delay:0.3s;font-size:9px">★</div>
+
+    <div class="site-title">DJ DELLANOCHE</div>
+    <div class="subtitle">★ official site ★ est. 2006 ★ the night belongs to her ★</div>
+    <div class="divider"></div>
+    <nav>
+      <a href="#about">HOME</a>
+      <a href="#tracks">MIXES</a>
+      <a href="#shows">SHOWS</a>
+      <a href="#photos">FOTOS</a>
+      <a href="#guestbook">GUESTBOOK</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+    <div class="divider"></div>
+  </header>
+
+  <!-- Music Player -->
+  <div id="music-player" class="panel">
+    <div class="panel-title">♪ now playing</div>
+    <div class="panel-body">
+      <div class="player-top">
+        <div class="player-disc" id="player-disc">💿</div>
+        <div class="player-info">
+          <div class="player-scrolling">
+            <span class="player-scrolling-inner player-track-name" id="player-name">Midnight Frequency - DJ Dellanoche</span>
+          </div>
+          <div class="player-artist">DJ DELLANOCHE ★ 2006 ★ UNRELEASED</div>
+        </div>
+        <button class="mute-toggle" id="mute-btn" onclick="toggleMute()" title="toggle music">♫ ON</button>
+      </div>
+      <div class="player-controls">
+        <button class="ctrl-btn" onclick="prevTrack()">◄◄</button>
+        <button class="ctrl-btn main-play" id="play-btn" onclick="togglePlay()">▶</button>
+        <button class="ctrl-btn" onclick="nextTrack()">►►</button>
+        <div class="volume-wrap">
+          🔊 <input type="range" min="0" max="100" value="70" id="vol-slider" oninput="setVolume(this.value)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Grid -->
+  <div class="main-grid">
+    <!-- Left Column -->
+    <div>
+      <!-- About -->
+      <div class="panel" id="about">
+        <div class="panel-title">about dellanoche</div>
+        <div class="panel-body">
+          <div class="hero-section">
+            <div class="dj-avatar">🎧</div>
+            <div class="about-text">
+              <p>hey!! welcome to my little corner of the internet 💜 i'm <strong>dellanoche</strong> — resident dj, midnight creature, and full-time vinyl addict.</p>
+              <p>spinning <strong>electronic, house, pop & everything in between</strong>. if it makes you wanna dance at 3am, it belongs in my set.</p>
+              <p>been djing since i was 16, playing local clubs, house parties and private events. the night is my playground 🌙✨</p>
+              <p>this site is updated every week with new mixes, photos and tour dates. sign my <a href="#guestbook" style="color:#ff2d78;text-decoration:none">guestbook</a>!! 💕</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tracklist -->
+      <div class="panel" id="tracks" style="margin-top:10px">
+        <div class="panel-title">★ latest mixes</div>
+        <div class="panel-body">
+          <div id="tracklist"></div>
+        </div>
+      </div>
+
+      <!-- Shows -->
+      <div class="panel" id="shows" style="margin-top:10px">
+        <div class="panel-title">★ upcoming shows</div>
+        <div class="panel-body">
+          <div id="shows-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Status -->
+      <div class="panel">
+        <div class="panel-title">my status</div>
+        <div class="panel-body status-box">
+          <div class="status-pic">🌙</div>
+          <div class="status-text">
+            <div><span class="status-online"></span> online now</div>
+            <div style="margin-top:6px;color:#ff99cc;font-style:italic">"a noite me pertence"</div>
+            <div style="margin-top:6px">mood: <span class="glitter-text">✨ obsessed ✨</span></div>
+            <div style="margin-top:4px">listening to: <span style="color:#ffccdd">my own mix lol</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mood Bars -->
+      <div class="panel">
+        <div class="panel-title">vibe check</div>
+        <div class="panel-body">
+          <div class="mood-item">energy <div class="mood-bar"><div class="mood-fill" style="width:92%"></div></div></div>
+          <div class="mood-item">dark <div class="mood-bar"><div class="mood-fill" style="width:85%"></div></div></div>
+          <div class="mood-item">sexy <div class="mood-bar"><div class="mood-fill" style="width:78%"></div></div></div>
+          <div class="mood-item">weird <div class="mood-bar"><div class="mood-fill" style="width:65%"></div></div></div>
+          <div class="mood-item">emotional <div class="mood-bar"><div class="mood-fill" style="width:55%"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Visitors -->
+      <div class="panel">
+        <div class="panel-title">visitors</div>
+        <div class="panel-body" style="text-align:center">
+          <div style="font-family:'VT323',monospace;font-size:2rem;color:#ff2d78;text-shadow:var(--glow-pink);letter-spacing:0.1em" id="visitor-count">024,817</div>
+          <div style="font-size:0.7rem;color:#996688;text-transform:uppercase;letter-spacing:0.1em">you are visitor #<span style="color:#ff99cc" id="my-num">024,818</span></div>
+          <div style="margin-top:8px">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20'%3E%3Crect width='100' height='20' fill='%23110011'/%3E%3Ctext x='50' y='14' font-family='monospace' font-size='10' fill='%23ff2d78' text-anchor='middle'%3E★ DELLANOCHE ★%3C/text%3E%3C/svg%3E" alt="banner" style="border:1px solid #440033">
+          </div>
+        </div>
+      </div>
+
+      <!-- Badges 88x31 -->
+      <div class="panel">
+        <div class="panel-title">buttons</div>
+        <div class="panel-body">
+          <div class="buttons-grid">
+            <span class="badge-88">BEST IN IE 6</span>
+            <span class="badge-88">♫ music on</span>
+            <span class="badge-88">no hotlinks!</span>
+            <span class="badge-88">♥ free music</span>
+            <span class="badge-88">flash 8.0</span>
+            <span class="badge-88">♦ myspace</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="panel">
+        <div class="panel-title">linkss</div>
+        <div class="panel-body" style="font-size:0.82rem;line-height:2">
+          <a href="#" style="color:#ff99cc;text-decoration:none;display:block">★ my myspace</a>
+          <a href="#" style="color:#ff99cc;text-decoration:none;display:block">★ fotolog</a>
+          <a href="#" style="color:#ff99cc;text-decoration:none;display:block">★ booking</a>
+          <a href="#" style="color:#ff99cc;text-decoration:none;display:block">★ soundcloud</a>
+          <a href="#" style="color:#ff99cc;text-decoration:none;display:block">★ request a set</a>
+          <a href="#" style="color:#ff99cc;text-decoration:none;display:block">★ donate ♥</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Guestbook -->
+  <div class="panel" id="guestbook" style="margin-top:10px">
+    <div class="panel-title">guestbook — say something 💜</div>
+    <div class="panel-body">
+      <div id="gb-entries"></div>
+      <div class="gb-form">
+        <input type="text" id="gb-name" placeholder="your name" maxlength="30">
+        <textarea id="gb-msg" placeholder="leave a message... ★"></textarea>
+        <button class="btn-y2k" onclick="postGuestbook()">★ post ★</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="divider" style="margin-bottom:14px"></div>
+    © 2006 dj dellanoche. all rights reserved. do not steal my graphics!<br>
+    best viewed in 1024×768 with sound on 🌙
+    <br><br>
+    <span style="font-size:0.75rem">made with 💜 and a lot of late nights</span>
+  </footer>
+</div>
+
+<script>
+// === LOADING SCREEN ===
+(function(){
+  const fill = document.getElementById('load-fill');
+  const txt = document.getElementById('load-text');
+  const msgs = ['LOADING...','CONNECTING...','FETCHING VIBES...','ALMOST THERE...','WELCOME ★'];
+  let p = 0, mi = 0;
+  const iv = setInterval(()=>{
+    p += Math.random()*15+5;
+    if(p>100) p=100;
+    fill.style.width = p+'%';
+    mi = Math.floor(p/25);
+    txt.textContent = msgs[Math.min(mi,4)];
+    if(p>=100){
+      clearInterval(iv);
+      setTimeout(()=>{
+        const l = document.getElementById('loading');
+        l.style.opacity='0';
+        setTimeout(()=>l.remove(),800);
+        initAudio();
+      },400);
+    }
+  },120);
+})();
+
+// === CURSOR ===
+const cur = document.getElementById('nail-cursor');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px';
+  cur.style.top = e.clientY + 'px';
+});
+
+// === SPARKLES ON CLICK ===
+const sparks = ['★','✦','✧','♦','⋆','✿','♥'];
+document.addEventListener('click', e => {
+  for(let i=0;i<7;i++){
+    const s = document.createElement('div');
+    s.className = 'sparkle';
+    s.textContent = sparks[Math.floor(Math.random()*sparks.length)];
+    const angle = Math.random()*360;
+    const dist = 30+Math.random()*50;
+    s.style.setProperty('--tx', Math.cos(angle*Math.PI/180)*dist+'px');
+    s.style.setProperty('--ty', Math.sin(angle*Math.PI/180)*dist+'px');
+    s.style.left = e.clientX+'px';
+    s.style.top = e.clientY+'px';
+    s.style.color = ['#ff2d78','#cc00ff','#ffcc00','#ff99cc','#fff'][Math.floor(Math.random()*5)];
+    s.style.animationDelay = (i*0.06)+'s';
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),1400);
+  }
+});
+
+// === STARS CANVAS ===
+(function(){
+  const c = document.getElementById('stars-canvas');
+  const ctx = c.getContext('2d');
+  let stars = [];
+  function resize(){
+    c.width=window.innerWidth;
+    c.height=window.innerHeight;
+    stars=[];
+    for(let i=0;i<120;i++){
+      stars.push({
+        x:Math.random()*c.width,
+        y:Math.random()*c.height,
+        r:Math.random()*1.5+0.3,
+        a:Math.random(),
+        da:(Math.random()-0.5)*0.008,
+        t:Math.random()*6.28
+      });
+    }
+  }
+  resize();
+  window.addEventListener('resize',resize);
+  function draw(){
+    ctx.clearRect(0,0,c.width,c.height);
+    stars.forEach(s=>{
+      s.t+=0.02;
+      s.a=0.3+0.7*(0.5+0.5*Math.sin(s.t));
+      ctx.beginPath();
+      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(255,180,220,${s.a})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// === AUDIO ===
+let audioCtx, bgGain, isPlaying=false, isMuted=false;
+let trackIdx=0;
+
+const tracks = [
+  { name: 'Midnight Frequency — DJ Dellanoche', bpm: 128 },
+  { name: 'Neon Bones — DJ Dellanoche', bpm: 135 },
+  { name: 'Dark Samba — DJ Dellanoche (feat. unknown)', bpm: 120 },
+  { name: 'Corpo de Estrelas — DJ Dellanoche', bpm: 140 },
+  { name: 'Last Dance (Club Mix) — DJ Dellanoche', bpm: 125 },
+];
+
+let oscillators=[], lfoNodes=[];
+
+function initAudio(){
+  audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+  bgGain = audioCtx.createGain();
+  bgGain.gain.value = 0;
+  bgGain.connect(audioCtx.destination);
+  startBeat();
+  setTimeout(()=>{
+    bgGain.gain.linearRampToValueAtTime(0.35,audioCtx.currentTime+2);
+    isPlaying=true;
+    document.getElementById('play-btn').textContent='⏸';
+    document.getElementById('player-disc').classList.add('playing');
+  },500);
+}
+
+function startBeat(){
+  stopBeat();
+  const bpm = tracks[trackIdx].bpm;
+  const beat = 60/bpm;
+
+  // Kick
+  function kick(t){
+    const o=audioCtx.createOscillator();
+    const g=audioCtx.createGain();
+    o.connect(g); g.connect(bgGain);
+    o.frequency.setValueAtTime(150,t);
+    o.frequency.exponentialRampToValueAtTime(50,t+0.08);
+    g.gain.setValueAtTime(1,t);
+    g.gain.exponentialRampToValueAtTime(0.001,t+0.18);
+    o.start(t); o.stop(t+0.2);
+  }
+
+  // HiHat
+  function hihat(t,vol=0.15){
+    const b=audioCtx.createBufferSource();
+    const buf=audioCtx.createBuffer(1,4096,audioCtx.sampleRate);
+    const d=buf.getChannelData(0);
+    for(let i=0;i<4096;i++) d[i]=(Math.random()*2-1);
+    b.buffer=buf;
+    const g=audioCtx.createGain();
+    const f=audioCtx.createBiquadFilter();
+    f.type='highpass'; f.frequency.value=8000;
+    b.connect(f); f.connect(g); g.connect(bgGain);
+    g.gain.setValueAtTime(vol,t);
+    g.gain.exponentialRampToValueAtTime(0.001,t+0.05);
+    b.start(t); b.stop(t+0.06);
+  }
+
+  // Bass synth
+  function bass(t){
+    const o=audioCtx.createOscillator();
+    const g=audioCtx.createGain();
+    o.type='sawtooth';
+    o.frequency.value=55;
+    o.connect(g); g.connect(bgGain);
+    g.gain.setValueAtTime(0.3,t);
+    g.gain.exponentialRampToValueAtTime(0.001,t+beat*0.9);
+    o.start(t); o.stop(t+beat);
+  }
+
+  // Pad
+  function pad(t){
+    const freqs=[220,277,330];
+    freqs.forEach(f=>{
+      const o=audioCtx.createOscillator();
+      const g=audioCtx.createGain();
+      o.type='triangle';
+      o.frequency.value=f;
+      o.connect(g); g.connect(bgGain);
+      g.gain.setValueAtTime(0,t);
+      g.gain.linearRampToValueAtTime(0.04,t+0.1);
+      g.gain.linearRampToValueAtTime(0.04,t+beat*4-0.1);
+      g.gain.linearRampToValueAtTime(0,t+beat*4);
+      o.start(t); o.stop(t+beat*4);
+    });
+  }
+
+  const start=audioCtx.currentTime;
+  let t=start;
+  const totalBars=16;
+  for(let bar=0;bar<totalBars;bar++){
+    for(let b=0;b<4;b++){
+      kick(t+b*beat);
+      hihat(t+b*beat+beat*0.5);
+      if(b%2===1) hihat(t+b*beat+beat*0.25, 0.08);
+    }
+    bass(t);
+    if(bar%4===0) pad(t);
+    t+=beat*4;
+  }
+
+  // Schedule restart
+  const dur=(t-start)*1000;
+  const sid=setTimeout(()=>{ if(isPlaying) startBeat(); },dur-200);
+  lfoNodes.push({timeout:sid});
+}
+
+function stopBeat(){
+  lfoNodes.forEach(n=>{ if(n.timeout) clearTimeout(n.timeout); });
+  lfoNodes=[];
+}
+
+function togglePlay(){
+  if(!audioCtx) { initAudio(); return; }
+  if(isPlaying){
+    audioCtx.suspend();
+    isPlaying=false;
+    document.getElementById('play-btn').textContent='▶';
+    document.getElementById('player-disc').classList.remove('playing');
+  } else {
+    audioCtx.resume();
+    isPlaying=true;
+    document.getElementById('play-btn').textContent='⏸';
+    document.getElementById('player-disc').classList.add('playing');
+  }
+}
+
+function toggleMute(){
+  if(!audioCtx) return;
+  isMuted=!isMuted;
+  bgGain.gain.linearRampToValueAtTime(isMuted?0:0.35,audioCtx.currentTime+0.3);
+  document.getElementById('mute-btn').textContent=isMuted?'♫ OFF':'♫ ON';
+}
+
+function setVolume(v){
+  if(!audioCtx) return;
+  bgGain.gain.linearRampToValueAtTime(v/100*0.5,audioCtx.currentTime+0.1);
+}
+
+function prevTrack(){
+  trackIdx=(trackIdx-1+tracks.length)%tracks.length;
+  updatePlayerName();
+  if(isPlaying) startBeat();
+}
+
+function nextTrack(){
+  trackIdx=(trackIdx+1)%tracks.length;
+  updatePlayerName();
+  if(isPlaying) startBeat();
+}
+
+function updatePlayerName(){
+  document.getElementById('player-name').textContent=tracks[trackIdx].name;
+}
+
+// === TRACKLIST ===
+(function(){
+  const tl=document.getElementById('tracklist');
+  tracks.forEach((t,i)=>{
+    const dur=['5:32','6:14','4:58','7:02','5:44'][i];
+    tl.innerHTML+=`<div class="track-item" onclick="trackIdx=${i};updatePlayerName();if(isPlaying)startBeat()">
+      <span class="track-num">0${i+1}</span>
+      <div class="track-info">
+        <div class="track-name">${t.name.split(' — ')[0]}</div>
+        <div class="track-genre">${['deep house','tech house','electronic','electro pop','club mix'][i]} · ${t.bpm}bpm</div>
+      </div>
+      <span class="track-duration">${dur}</span>
+    </div>`;
+  });
+})();
+
+// === SHOWS ===
+(function(){
+  const shows=[
+    {date:'10 MAR 2006', venue:'Club Noturno', city:'São Paulo, BR', status:'confirmed'},
+    {date:'18 MAR 2006', venue:'Warehouse 17', city:'Rio de Janeiro, BR', status:'confirmed'},
+    {date:'25 MAR 2006', venue:'Electric Chapel', city:'Belo Horizonte, BR', status:'tba'},
+    {date:'02 ABR 2006', venue:'The Bunker', city:'Curitiba, BR', status:'confirmed'},
+  ];
+  const el=document.getElementById('shows-list');
+  shows.forEach(s=>{
+    const color=s.status==='confirmed'?'#00ff88':'#ffcc00';
+    el.innerHTML+=`<div style="display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,0,102,0.2);font-size:0.85rem">
+      <span style="font-family:'VT323',monospace;font-size:1.1rem;color:#ff2d78;min-width:80px">${s.date}</span>
+      <div style="flex:1">
+        <div style="color:#ffddee">${s.venue}</div>
+        <div style="font-size:0.72rem;color:#996688;text-transform:uppercase;letter-spacing:0.1em">${s.city}</div>
+      </div>
+      <span style="font-family:'VT323',monospace;font-size:0.85rem;color:${color};text-transform:uppercase;border:1px solid ${color};padding:1px 6px">${s.status}</span>
+    </div>`;
+  });
+})();
+
+// === GUESTBOOK ===
+let entries=[
+  {name:'xXmoongirlXx',date:'02/14/2006',msg:'omg ur sets are so good i cry every time 💜💜'},
+  {name:'nightcrawler99',date:'02/12/2006',msg:'saw u at club noturno last week. absolute fire!!'},
+  {name:'stardustbabe',date:'02/10/2006',msg:'dellanoche é a melhor dj do brasil sem discussão'},
+  {name:'d4rkfl0wer',date:'02/08/2006',msg:'please play midnight frequency again at the next show!!!! ★'},
+];
+
+function renderGB(){
+  const el=document.getElementById('gb-entries');
+  el.innerHTML=entries.slice(0,6).map(e=>`
+    <div class="guestbook-entry">
+      <span class="gb-name">${e.name}</span><span class="gb-date">${e.date}</span>
+      <div class="gb-msg">${e.msg}</div>
+    </div>`).join('');
+}
+
+function postGuestbook(){
+  const n=document.getElementById('gb-name').value.trim();
+  const m=document.getElementById('gb-msg').value.trim();
+  if(!n||!m) return;
+  entries.unshift({name:n,date:new Date().toLocaleDateString('pt-BR',{month:'2-digit',day:'2-digit',year:'numeric'}),msg:m});
+  document.getElementById('gb-name').value='';
+  document.getElementById('gb-msg').value='';
+  renderGB();
+}
+
+renderGB();
+
+// === VISITOR COUNTER (random increment) ===
+setInterval(()=>{
+  let v=parseInt(document.getElementById('visitor-count').textContent.replace(/,/g,''));
+  v+=Math.floor(Math.random()*3);
+  document.getElementById('visitor-count').textContent=v.toLocaleString('en-US').padStart(7,'0');
+  document.getElementById('my-num').textContent=(v+1).toLocaleString('en-US').padStart(7,'0');
+},8000);
+</script>
+</body>
+</html>
