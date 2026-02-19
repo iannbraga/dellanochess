@@ -129,6 +129,27 @@
 
       <div class="main-grid">
         <div>
+
+          <div class="panel" id="bio">
+            <div class="panel-title">bio</div>
+            <div class="panel-body">
+              <div class="bio-wrap">
+                <img src="img/bio.jpeg" alt="Dellanoche" class="bio-photo"
+                  @error="$event.target.style.display='none'">
+                <div class="bio-text">
+                  <p>nordestina e nortista, dellanoche se apresenta desde 2017 munida de versatilidade, diversão e sedução. 
+                  Tocou em casas de show no Tocantins, em Palmas, Araguaína e Gurupi, em Goiânia, São Paulo e Curitiba, em festivais no Norte como Sonora e Bem Ali, e na sua terra natal, Teresina, no Piauí. Participou de projetos de hip hop, cursos e oficinas de mixagem e turntablism, estudando a discotecagem com vinil. 
+                  </p>
+
+                  <br>
+
+                  <p>realizadora do Baile Della desde 2022 e de outros eventos LGBTQIAPN+, faz parte da cena ballroom como Della de Mandacaru, já dividiu line com nomes que são referência, como Tati Quebra Barraco, Mc Naninha, Clementaum e Brunoso, e produziu a festa GRAVÍSSIMA! em São Paulo, com a presença de nomes como Mc Thaya, Wavezim e Girl_irl (EUA). Amante da Bass Music e de ritmos breakbeat com pegadas brasileiras, Dellanoche leva pra pista mixagens improváveis e certeiras que emocionam, de Funk, House, Techno, Pc Music, Hardstyle, Dancehall, Rock Doido, Perreo, Cumbia, Guaracha, Latin Club e tudo que toca seu coração latino 💖
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="panel" id="sets">
             <div class="panel-title">sets</div>
             <div class="panel-body">
@@ -141,49 +162,6 @@
                   <div class="set-label">
                     <a :href="set.url" target="_blank">{{ set.label }}</a>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- GALLERY: ANALÓGICAS -->
-          <div class="panel" id="fotos">
-            <div class="panel-title">analógicas della</div>
-            <div class="panel-body">
-              <div class="gallery-grid">
-                <div class="gallery-item" v-for="img in galleries.analogicas" :key="img">
-                  <img :src="img" :alt="img">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- GALLERY: BAILE DELLÃO -->
-          <div class="panel">
-            <div class="panel-title">baile dellão</div>
-            <div class="panel-body">
-              <div class="gallery-grid">
-                <div class="gallery-item"><img src="img/eventos/baile_delao/IMG_5230.webp" alt="baile 1"></div>
-                <div class="gallery-item"><img src="img/eventos/baile_delao/IMG_5249.webp" alt="baile 2"></div>
-                <div class="gallery-item" style="grid-column:1/-1;height:300px">
-                  <img src="img/eventos/baile_delao/IMG_5550.webp" alt="baile 3">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- GALLERY: BRUNOSO -->
-          <div class="panel">
-            <div class="panel-title">baile della com brunoso</div>
-            <div class="panel-body">
-              <div class="gallery-grid">
-                <div class="gallery-item" v-for="img in galleries.brunoso" :key="img">
-                  <img :src="img" :alt="img">
-                </div>
-                <div class="gallery-item"
-                  style="display:flex;align-items:center;justify-content:center;background:rgba(20,0,40,0.8);border:2px dashed #660044">
-                  <a href="https://drive.google.com/drive/folders/1hR0rHjEpKZmMVLXUVlwfhkK8uM_9d8Q7"
-                    target="_blank" class="btn-y2k">ver mais fotos ★</a>
                 </div>
               </div>
             </div>
