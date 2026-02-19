@@ -12,17 +12,6 @@
 
   <div id="app">
 
-    <!-- LOADING -->
-    <transition name="fade">
-      <div id="loading" v-if="loading.visible">
-        <div class="ld-title">Dellanoche</div>
-        <div class="ld-bar-wrap">
-          <div class="ld-bar-fill" :style="{ width: loading.progress + '%' }"></div>
-        </div>
-        <div class="ld-txt">{{ loading.message }}</div>
-      </div>
-    </transition>
-
     <!-- NAIL CURSOR -->
     <svg id="nail-cursor" viewBox="0 0 30 54" xmlns="http://www.w3.org/2000/svg"
       :style="{ left: cursor.x + 'px', top: cursor.y + 'px' }">
@@ -45,12 +34,7 @@
     </svg>
 
     <!-- SPARKLE POOL -->
-    <div
-      v-for="sp in sparklePool"
-      :key="sp.id"
-      class="sparkle"
-      v-show="sp.active"
-      :style="{
+    <div v-for="sp in sparklePool" :key="sp.id" class="sparkle" v-show="sp.active" :style="{
         left: sp.x + 'px',
         top: sp.y + 'px',
         '--tx': sp.tx + 'px',
@@ -58,8 +42,7 @@
         color: sp.color,
         fontSize: sp.size + 'px',
         animationDelay: sp.delay + 's'
-      }"
-    >{{ sp.char }}</div>
+      }">{{ sp.char }}</div>
 
     <canvas id="stars-canvas"></canvas>
 
@@ -84,14 +67,15 @@
         <div class="dstar" style="top:55px;left:11%;font-size:8px;animation-delay:1.1s">★</div>
         <div class="dstar" style="top:48px;right:18%;font-size:9px;animation-delay:0.3s">✦</div>
 
-        <img src="img/LOGO EFEITO 2-1.png" alt="Dellanoche" class="logo-img"
-          @error="logoFallback = true" v-show="!logoFallback">
+        <img src="img/LOGO EFEITO 2-1.png" alt="Dellanoche" class="logo-img" @error="logoFallback = true"
+          v-show="!logoFallback">
         <span class="site-name" v-show="logoFallback">DJ DELLANOCHE</span>
         <div class="tagline">Ƹ̵̡Ӝ̵̨̄Ʒ &nbsp; the night belongs to her &nbsp; Ƹ̵̡Ӝ̵̨̄Ʒ</div>
         <div class="divider"></div>
       </header>
 
       <nav>
+        <a href="index.html">home</a>
         <a href="bio.html">bio</a>
         <a href="#sets">sets</a>
         <a href="#fotos">fotos</a>
@@ -117,8 +101,7 @@
             <button class="ctrl-btn" @click="nextTrack">&#9654;&#9654;</button>
             <div class="vol-wrap">
               🔊
-              <input type="range" min="0" max="100" :value="player.volume"
-                @input="setVolume($event.target.value)">
+              <input type="range" min="0" max="100" :value="player.volume" @input="setVolume($event.target.value)">
             </div>
             <button class="mute-btn" @click="toggleMute">
               {{ player.isMuted ? '♫ OFF' : '♫ ON' }}
@@ -134,16 +117,32 @@
             <div class="panel-title">bio</div>
             <div class="panel-body">
               <div class="bio-wrap">
-                <img src="img/bio.jpeg" alt="Dellanoche" class="bio-photo"
-                  @error="$event.target.style.display='none'">
+                <img src="img/bio.jpeg" alt="Dellanoche" class="bio-photo" @error="$event.target.style.display='none'">
                 <div class="bio-text">
-                  <p>nordestina e nortista, dellanoche se apresenta desde 2017 munida de versatilidade, diversão e sedução. 
-                  Tocou em casas de show no Tocantins, em Palmas, Araguaína e Gurupi, em Goiânia, São Paulo e Curitiba, em festivais no Norte como Sonora e Bem Ali, e na sua terra natal, Teresina, no Piauí. Participou de projetos de hip hop, cursos e oficinas de mixagem e turntablism, estudando a discotecagem com vinil. 
+                  <p>nordestina e nortista, dellanoche se apresenta desde 2017 munida de versatilidade, diversão e
+                    sedução.
+                    Tocou em casas de show no Tocantins, em Palmas, Araguaína e Gurupi, em Goiânia, São Paulo e
+                    Curitiba, em festivais no Norte como Sonora e Bem Ali, e na sua terra natal, Teresina, no Piauí.
+                    Participou de projetos de hip hop, cursos e oficinas de mixagem e turntablism, estudando a
+                    discotecagem com vinil.
                   </p>
 
                   <br>
 
-                  <p>realizadora do Baile Della desde 2022 e de outros eventos LGBTQIAPN+, faz parte da cena ballroom como Della de Mandacaru, já dividiu line com nomes que são referência, como Tati Quebra Barraco, Mc Naninha, Clementaum e Brunoso, e produziu a festa GRAVÍSSIMA! em São Paulo, com a presença de nomes como Mc Thaya, Wavezim e Girl_irl (EUA). Amante da Bass Music e de ritmos breakbeat com pegadas brasileiras, Dellanoche leva pra pista mixagens improváveis e certeiras que emocionam, de Funk, House, Techno, Pc Music, Hardstyle, Dancehall, Rock Doido, Perreo, Cumbia, Guaracha, Latin Club e tudo que toca seu coração latino 💖
+                  <p>realizadora do Baile Della desde 2022 e de outros eventos LGBTQIAPN+, faz parte da cena ballroom
+                    como Della de Mandacaru, já dividiu line com nomes que são referência, como Tati Quebra Barraco, Mc
+                    Naninha, Clementaum e Brunoso, e produziu a festa GRAVÍSSIMA! em São Paulo, com a presença de nomes
+                    como Mc Thaya, Wavezim e Girl_irl (EUA). Amante da Bass Music e de ritmos breakbeat com pegadas
+                    brasileiras, Dellanoche leva pra pista mixagens improváveis e certeiras que emocionam, de Funk,
+                    House, Techno, Pc Music, Hardstyle, Dancehall, Rock Doido, Perreo, Cumbia, Guaracha, Latin Club e
+                    tudo que toca seu coração latino 💖
+                  </p>
+
+                  <p>
+                    Além de já ter sido DJ de Batalha de rima.
+
+                    Como produtora, levou pro Tocuntins kLap (DF) e Brunoso (MA) em 2021, Brunoso (MA) novamente em
+                    2024, J4K3 (DF), em 2024, Clementaum, em 2024 e Úrsula Zion, em 2025.
                   </p>
                 </div>
               </div>
@@ -156,7 +155,6 @@
               <div class="sets-grid">
                 <div class="set-item" v-for="set in sets" :key="set.id">
                   <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-                   
                     :src="`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${set.id}&color=%23ff0066&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true`">
                   </iframe>
                   <div class="set-label">
@@ -226,7 +224,8 @@
             <div class="panel-title">visitas</div>
             <div class="panel-body">
               <span class="visitor-num">{{ visitorCount }}</span>
-              <div class="visitor-sub">você é a visita nº <span style="color:#ff99cc">{{ visitorCount + 1 }}</span></div>
+              <div class="visitor-sub">você é a visita nº <span style="color:#ff99cc">{{ visitorCount + 1 }}</span>
+              </div>
             </div>
           </div>
 
@@ -250,8 +249,8 @@
               <a href="https://soundcloud.com/dellanochedj" target="_blank">♫ soundcloud</a>
               <a href="https://instagram.com/dellanoche_" target="_blank">★ instagram</a>
               <a href="mailto:djdellanoche@gmail.com">✉ e-mail / booking</a>
-              <a href="https://drive.google.com/drive/folders/1hR0rHjEpKZmMVLXUVlwfhkK8uM_9d8Q7"
-                target="_blank">📷 mais fotos</a>
+              <a href="https://drive.google.com/drive/folders/1hR0rHjEpKZmMVLXUVlwfhkK8uM_9d8Q7" target="_blank">📷 mais
+                fotos</a>
             </div>
           </div>
         </div>
@@ -590,8 +589,8 @@
           { id: '2107842039', url: 'https://soundcloud.com/dellanochedj/set-della-na-ctrl', label: 'set della na ctrl!' },
           { id: '1498298428', url: 'https://soundcloud.com/dellanochedj/setzin-de-turntablism-na-capao-house', label: '✧ Setzin de Turntablism na Capão House ✧' },
           { id: '1821326406', url: 'https://soundcloud.com/dellanochedj/um-set-pra-todes-speedtest-sos-sul', label: 'DELLA — SPEEDTEST S.O.S SUL' },
-          { id: '961196458',  url: 'https://soundcloud.com/dellanochedj/mini-mix-2021', label: '✹ mini mix 2021 ✹' },
-          { id: '929437120',  url: 'https://soundcloud.com/dellanochedj/escura', label: '𝙀𝙎𝘾𝙐𝙍𝘼' },
+          { id: '961196458', url: 'https://soundcloud.com/dellanochedj/mini-mix-2021', label: '✹ mini mix 2021 ✹' },
+          { id: '929437120', url: 'https://soundcloud.com/dellanochedj/escura', label: '𝙀𝙎𝘾𝙐𝙍𝘼' },
         ]
 
         // ── GALLERIES DATA ─────────────────────────────────
@@ -611,10 +610,10 @@
 
         // ── VIBES DATA ─────────────────────────────────────
         const vibes = [
-          { label: 'bass',   value: 96 },
+          { label: 'bass', value: 96 },
           { label: 'energy', value: 90 },
-          { label: 'dark',   value: 82 },
-          { label: 'queer',  value: 100 },
+          { label: 'dark', value: 82 },
+          { label: 'queer', value: 100 },
           { label: 'perreo', value: 78 },
         ]
 
@@ -667,4 +666,5 @@
   </script>
 
 </body>
+
 </html>
